@@ -1,0 +1,12 @@
+.gform_wrapper div.gform_card_icon.gform_card_icon_dinersclub {
+    background-image: url(./gf-dinersclub-icons.png);
+    background-position: 0 0;
+}
+.gform_wrapper
+    div.gform_card_icon.gform_card_icon_dinersclub.gform_card_icon_selected {
+    background-position: 0 -32px;
+}
+.gform_wrapper
+    div.gform_card_icon.gform_card_icon_dinersclub.gform_card_icon_inactive {
+    background-position: 0 -64px;
+}
