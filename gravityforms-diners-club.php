@@ -35,14 +35,19 @@ add_action(
 
 		add_action(
 			'wp_enqueue_scripts', function() {
-				wp_enqueue_style( 'gf-diners-club', plugin_dir_url( __FILE__ ) . 'gravityforms-diners-club.css', [], filemtime( plugin_dir_path( __FILE__ ) .'gravityforms-diners-club.css' ), 'screen' );
-			}
+
+				if ( wp_style_is( 'gforms_formsmain_css' ) ) {
+					wp_enqueue_style( 'gf-diners-club', plugin_dir_url( __FILE__ ) . 'gravityforms-diners-club.css', [], filemtime( plugin_dir_path( __FILE__ ) .'gravityforms-diners-club.css' ), 'screen' );
+				}
+			}, 100
 		);
 
 		add_action(
 			'admin_enqueue_scripts', function() {
-				wp_enqueue_style( 'gf-diners-club', plugin_dir_url( __FILE__ ) . 'gravityforms-diners-club.css', [], filemtime( plugin_dir_path( __FILE__ ) .'gravityforms-diners-club.css' ), 'screen' );
-			}
+				if ( GFForms::is_gravity_page() ) {
+					wp_enqueue_style( 'gf-diners-club', plugin_dir_url( __FILE__ ) . 'gravityforms-diners-club.css', [], filemtime( plugin_dir_path( __FILE__ ) .'gravityforms-diners-club.css' ), 'screen' );
+				}
+			}, 100
 		);
 	}
 );
