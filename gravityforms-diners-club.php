@@ -38,5 +38,11 @@ add_action(
 				wp_enqueue_style( 'gf-diners-club', plugin_dir_url( __FILE__ ) . 'gravityforms-diners-club.css', [], filemtime( plugin_dir_path( __FILE__ ) .'gravityforms-diners-club.css' ), 'screen' );
 			}
 		);
+
+		add_action(
+			'admin_enqueue_scripts', function() {
+				wp_enqueue_style( 'gf-diners-club', plugin_dir_url( __FILE__ ) . 'gravityforms-diners-club.css', [], filemtime( plugin_dir_path( __FILE__ ) .'gravityforms-diners-club.css' ), 'screen' );
+			}
+		);
 	}
 );
